@@ -107,7 +107,7 @@ export class Timeline extends Component<Props, {}> {
 		for (const event of events) {
 			const eventHandler = this.props[`${event}Handler`];
 			if (eventHandler !== noop) {
-				this.timeline.on(event, eventHandler);
+				this.timeline.on(event, eventHandler as (properties: any) => void);
 			}
 		}
 
